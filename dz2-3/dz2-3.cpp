@@ -9,12 +9,12 @@ int main()
 
 
 	//#1
-	int time, h, s, m;
-	cin >> time;
-	h = time / 3600;
-	m = (time - h * 3600) / 60;
-	s = time % 60;
-	cout << h << " годин(a), " << m << " хвилин(a), " << s << " секунд(a)" << endl;
+	//int time, h, s, m;
+	//cin >> time;
+	//h = time / 3600;
+	//m = (time - h * 3600) / 60;
+	//s = time % 60;
+	//cout << h << " годин(a), " << m << " хвилин(a), " << s << " секунд(a)" << endl;
 
 	////#2
 	//float x;

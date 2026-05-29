@@ -1,6 +1,6 @@
-//#include<iostream>
-//#include<Windows.h>
-//using namespace std;
+#include<iostream>
+#include<Windows.h>
+using namespace std;
 //
 //enum Color
 //{
