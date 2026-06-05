@@ -14,9 +14,6 @@ using namespace std;
 //	body;
 //}
 
-
-
-
 int main()
 {
 	//SetConsoleCP(1251);
@@ -29,13 +26,40 @@ int main()
 
 
 
-	const int size = 10;
-	int arr[size], min, max;
+	/*const int size = 10;
+	int a[size], min, max;
 	cout << "Min:" << endl;
 	cin >> min;
 	cout << "Max:" << endl;
 	cin >> max;
 
-	setArray(arr, min, max);
-	printArray(arr, size);
+	setArray(a, min, max);
+	printArray(a, size);
+	sortArray(a, size);
+	printArray(a, size);*/
+
+
+
+
+	/*const int size = 10;
+	int a[size], min, max;
+	cout << "Min:" << endl;
+	cin >> min;
+	cout << "Max:" << endl;
+	cin >> max;
+	setArray(a, size, min, max);
+	printArray(a, size);
+	sortArray(a, size);
+	printArray(a, size);
+	cout << "n:" << endl;
+	int n;
+	cin >> n;
+	cout << findArray(a, size, min, max, n);*/
+
+
+
+
+	starLine();
+	starLine(30);
+	starLine(20, '#');
 }

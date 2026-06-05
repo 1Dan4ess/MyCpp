@@ -17,34 +17,63 @@ void SetColor(int text, int background)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
 }
 
-void starLine()
+
+void starLine(int size = 10, char symbol = '*')
 {
-	for (size_t i = 0; i < 10; i++)
+	for (size_t i = 0; i < size; i++)
 	{
-		cout << "*";
+		cout << symbol;
 	}
 	cout << endl;
 }
+
+
+
 float ser(int first, int second, int third)
 {
-	float summ = (first + second + third)/3.f;
+	float summ = (first + second + third) / 3.f;
 	return(summ);
 }
 
 
-void setArray(int arr[], int size, int min = 0, int max = 9)
+void setArray(int a[], int size, int min, int max)
 {
 	for (size_t i = 0; i < size; i++)
 	{
-		arr[i] = rand() % (max - min + 1) + min;
+		a[i] = rand() % (max - min + 1) + min;
 	}
 }
 
-void printArray(int arr[], int size)
+void printArray(int a[], int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
-		cout << arr[i] << " ";
+		cout << a[i] << " ";
 	}
 	cout << endl;
+}
+
+void sortArray(int a[], int size)
+{
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		for (size_t j = 0; j < size - i - 1; j++)
+		{
+			if (a[j] > a[j + 1])
+			{
+				swap(a[j], a[j + 1]);
+			}
+		}
+	}
+}
+int findArray(int a[], int size, int min, int max, int n)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		if (a[i] == n)
+		{
+			return i;
+		}
+	}
+	return -1;
 }
