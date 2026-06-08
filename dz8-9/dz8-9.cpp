@@ -49,28 +49,28 @@ int main()
 
 
     //2
-    const int size = 31;
-    int a[size], n;
-    for (size_t i = 0; i < size; i++) {
-        a[i] = i;
-    }
-    for (size_t i = 0; i < size; i++) {
-        cout << a[i] << " ";
-    }
-    cout << endl;
-    cout << "Ключ: ";
-    cin >> n;
-    cout << "Індекс: ";
-    cout << biFind(a, n, size) << endl;
-    return 0;
+    //const int size = 31;
+    //int a[size], n;
+    //for (size_t i = 0; i < size; i++) {
+    //    a[i] = i;
+    //}
+    //for (size_t i = 0; i < size; i++) {
+    //    cout << a[i] << " ";
+    //}
+    //cout << endl;
+    //cout << "Ключ: ";
+    //cin >> n;
+    //cout << "Індекс: ";
+    //cout << biFind(a, n, size) << endl;
+    //return 0;
   
 
 
 
 
     //3
-    //int n;
-    //cin >> n;
-    //cout << doubleNum(n) << endl;
-    //return 0;
+    int n;
+    cin >> n;
+    cout << doubleNum(n) << endl;
+    return 0;
 }

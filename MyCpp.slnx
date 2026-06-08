@@ -15,6 +15,7 @@
   <Project Path="lesson6/lesson6.vcxproj" Id="65c98646-8fb0-44d4-8dcc-66adc98bcd80" />
   <Project Path="lesson7/lesson7.vcxproj" Id="3124c73e-9cb8-4415-a213-48bc80ee68ba" />
   <Project Path="lesson8/lesson8.vcxproj" Id="96ec572d-a9ea-47d5-b50b-c0578b44bb12" />
+  <Project Path="lesson9/lesson9.vcxproj" Id="535b18b8-8a2b-46af-b4ea-e579b01c7313" />
   <Project Path="MyCpp.vcxproj" Id="179cc485-aec2-4e93-b0e6-d3a27663506f" />
   <Project Path="Project1/Project1.vcxproj" Id="6661faa6-c8c7-4b06-a9e3-6d8bc63fd71f" />
 </Solution>
