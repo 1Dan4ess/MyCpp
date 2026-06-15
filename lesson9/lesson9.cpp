@@ -94,7 +94,7 @@ void sortArray(T a[], int size)
 			break;
 		}
 	}
-	for (size_t i = size-1; i < 1; i--)
+	for (size_t i = size-1; i > 0; i--)
 	{
 		if (a[i] < 0)
 		{
@@ -120,12 +120,12 @@ int main()
     SetConsoleCP(65001);
     SetConsoleOutputCP(65001);
 
-	//const int size = 15;
-	//int a[size], min = -20, max = 20;
-	//setArray(a, size, min, max);
-	//printArray(a, size);
-	//sortArray(a, size);
-	//printArray(a, size);
+	const int size = 15;
+	int a[size], min = -20, max = 20;
+	setArray(a, size, min, max);
+	printArray(a, size);
+	sortArray(a, size);
+	printArray(a, size);
 
 
 
