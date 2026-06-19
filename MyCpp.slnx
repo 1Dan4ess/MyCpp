@@ -3,6 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="dz10-11/dz10-11.vcxproj" Id="da66036d-3a96-4794-841e-f01a302f193f" />
   <Project Path="dz2-3/dz2-3.vcxproj" Id="14874b61-f0fe-48eb-82af-cae472db0111" />
   <Project Path="dz3-4/dz3-4.vcxproj" Id="4291659c-19ef-4d71-a704-27877392ef8a" />
   <Project Path="dz4-5/dz4-5.vcxproj" Id="ba3b3f65-f969-4304-87d6-eb85ffd786b8" />

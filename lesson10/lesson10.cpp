@@ -40,12 +40,12 @@ int main()
 	//	cout << *i;
 	//}
 
-	//int size;
-	//cin >> size;
-	//int* p = new int[size];
-	//setArray(p, size);
-	//printArray(p, size);
-	//delete[] p;
+	int size;
+	cin >> size;
+	int* p = new int[size];
+	setArray(p, size);
+	printArray(p, size);
+	delete[] p;
 
 	//int* temp = new int[size + 1];
 	//for (size_t i = 0; i < size; i++)
