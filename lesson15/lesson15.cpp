@@ -199,5 +199,4 @@ int main()
 	//int a[5];
 	//cout << a << endl;
 	//cout << st << endl;
-
 }
