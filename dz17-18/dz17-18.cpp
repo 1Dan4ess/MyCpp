@@ -2,8 +2,55 @@
 #include<iostream>
 #include<Windows.h>
 #include <iomanip>
-#include <cstdlib>
 using namespace std;
+
+
+template<class T>
+void setArray(T** a, int row, int col, int min = 1, int max = 10)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			a[i][j] = rand() % (max - min + 1) + min;
+		}
+	}
+}
+
+template<class T>
+void createArray(T**& p, int row, int col)
+{
+	p = new T * [row];
+	for (size_t i = 0; i < row; i++)
+	{
+		p[i] = new T[col];
+	}
+}
+
+template<class T>
+void printArray(T** a, int row, int col)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << a[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+
+template<class T>
+void transportArray(T** a, T** b, int row, int col)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			b[i][j] = a[j][i];
+		}
+	}
+}
 
 template<class T>
 void addValueArray(T*& arr, int& size, T value)
@@ -18,34 +65,6 @@ void addValueArray(T*& arr, int& size, T value)
 	size++;
 	arr = temp;
 }
-
-//struct engine
-//{
-//	int cilinder = 4;
-//	void start()
-//	{
-//		cout << "Engine started" << endl;
-//	}
-//	void stop()
-//	{
-//		cout << "Engine stopped" << endl;
-//	}
-//};
-
-//struct car
-//{
-//	engine engine;
-//	void move()
-//	{
-//		engine.start();
-//		cout << "Car moved" << endl;
-//		engine.stop();
-//	}
-//	void sound()
-//	{
-//		cout << "Car sound" << endl;
-//	}
-//};
 
 struct Abonent
 {
@@ -141,61 +160,54 @@ struct PhoneBook
 	void findContact()
 	{
 		system("cls");
-		cout << "Element:";
+		cout << "---------------------" << endl;
+		cout << "Enter name or phone to search: ";
+		char search[80];
+		cin.getline(search, 80);
+
+		cout << "\nResult:" << endl;
+		cout << "---------------------" << endl;
+		bool found = false;
 
 		for (size_t i = 0; i < size; i++)
 		{
-			if (true)
+			if (strstr(abonents[i].name, search) != nullptr or strstr(abonents[i].phoneNumber, search) != nullptr)
 			{
-
+				abonents[i].print();
+				found = true;
 			}
-			abonents[i].print();
+		}
+		if (found == false)
+		{
+			cout << "No result" << endl;
 		}
 		system("pause");
 	}
 
 };
 
-//struct person
-//{
-//	char* name;
-//	int* phone;
-//};
-//
-//struct book
-//{
-//	int contacts = 3;
-//	person* abonent = new person[contacts];
-//	void innit()
-//	{
-//		for (size_t i = 0; i < contacts; i++)
-//		{
-//			cout << "Ім'я: ";
-//			char buffer[80];
-//			cin.getline(buffer, 80);
-//			int len = strlen(buffer);
-//			char* st = new char [len];
-//			strncpy_s(buffer, 80, st,len);
-//			abonent[0].name = new char[] {*st};
-//			cout << "Номер: ";
-//			int n;
-//			cin >> n;
-//			abonent[0].phone = new int[] {n};
-//		}
-//	}
-//};
-
 int main()
 {
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
 
+	//1
+
+	//int row, col;
+	//cin >> row >> col;
+	//int** p = nullptr;
+	//createArray(p, row, col);
+	//setArray(p, row, col);
+	//printArray(p, row, col);
+	//cout << endl;
+	//int** p1 = nullptr;
+	//createArray(p1, col, row);
+	//transportArray(p, p1, col, row);
+	//printArray(p1, col, row);
+
+
+	//2
 
 	PhoneBook book;
 	book.menu();
-
-
-	//car car;
-	//car.move();
-	//car.sound();
 }
