@@ -10,6 +10,8 @@
   <Project Path="dz15-16/dz15-16.vcxproj" Id="90e8812f-8f17-4fe8-ae9b-68a7f50c7244" />
   <Project Path="dz16-17/dz16-17.vcxproj" Id="436bb3e3-2ce7-4591-bdf0-6bcbac80d4e1" />
   <Project Path="dz17-18/dz17-18.vcxproj" Id="e6824018-cb82-4e55-ae54-a96e4422d872" />
+  <Project Path="dz18-19/dz18-19.vcxproj" Id="affa0924-7dcc-443c-b3e8-2ec32eed17b1" />
+  <Project Path="dz18/dz18.vcxproj" Id="e0002154-4cea-4e8f-ac02-58c60c82dd19" />
   <Project Path="dz2-3/dz2-3.vcxproj" Id="14874b61-f0fe-48eb-82af-cae472db0111" />
   <Project Path="dz3-4/dz3-4.vcxproj" Id="4291659c-19ef-4d71-a704-27877392ef8a" />
   <Project Path="dz4-5/dz4-5.vcxproj" Id="ba3b3f65-f969-4304-87d6-eb85ffd786b8" />
@@ -26,6 +28,7 @@
   <Project Path="lesson15/lesson15.vcxproj" Id="f2c57d00-2ff4-4a66-977c-03ae45a48ed5" />
   <Project Path="lesson16/lesson16.vcxproj" Id="e319966a-1ef3-4601-9cc7-2ebeba9a5190" />
   <Project Path="lesson17/lesson17.vcxproj" Id="09deea7c-028c-4bae-aa3f-0b1ad237fb5f" />
+  <Project Path="lesson19/lesson19.vcxproj" Id="a3f48e57-3b9d-4957-b13d-59010689c50a" />
   <Project Path="lesson3/lesson3.vcxproj" Id="8bedf29b-ac01-4413-8b8c-a9ce2a268cc9" />
   <Project Path="lesson5/lesson5.vcxproj" Id="cfba9769-06ed-41d4-94e1-75bb089e8f63" />
   <Project Path="lesson6/lesson6.vcxproj" Id="65c98646-8fb0-44d4-8dcc-66adc98bcd80" />
@@ -34,4 +37,5 @@
   <Project Path="lesson9/lesson9.vcxproj" Id="535b18b8-8a2b-46af-b4ea-e579b01c7313" />
   <Project Path="MyCpp.vcxproj" Id="179cc485-aec2-4e93-b0e6-d3a27663506f" />
   <Project Path="Project1/Project1.vcxproj" Id="6661faa6-c8c7-4b06-a9e3-6d8bc63fd71f" />
+  <Project Path="Project2/Project2.vcxproj" Id="7290d0ee-369b-4544-9829-7a2911c61a47" />
 </Solution>
