@@ -1,14 +1,33 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
-#include"Student.h"
+#include<Windows.h>
+#include <iomanip>
+#include <cstdlib>
+#include<fstream>
+#include <cstring>
 using namespace std;
+#include"Student.h"
 
 int main()
 {
-	Student s1;
-	/*strcpy(s1.name, "John");
-	s1.age = 20;*/
+	SetConsoleCP(65001);
+	SetConsoleOutputCP(65001);
 
-	s1.id = 12345;
+	Student s1("Vasya", 30);
+	//Student s2;
+
+	/*s1.setName("John");
+	s1.setAge(20);*/
+	/*s1.displayinfo();
+	s2.displayinfo();*/
+
+	while (true)
+	{
+		int buf;
+		cin >> buf;
+		s1.displayinfo();
+		system("pause");
+	}
 
 	return 0;
 }
