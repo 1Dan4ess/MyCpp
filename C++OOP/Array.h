@@ -8,6 +8,12 @@ class Array
 	int size = 1;
 
 public:
+
+	~Array()
+	{
+		delete[] arr;
+	}
+
 	void menu()
 	{
 		arr = new int[size] {};
