@@ -9,19 +9,32 @@ class Student
 	int* marks;
 	int sizeMarks = 0;
 
+	const int id;
 public:
 
-	Student()
+	static int count;
+
+	Student(int id) : id(id)
 	{
 		cout << "Default constructor called" << endl;
 		setName("None");
 		setAge(0);
+		count++;
 	}
-	Student(const char* n, int a)
+	Student(int id, const char* n, int a) : id(id)
 	{
 		cout << "Parameterized constructor called" << endl;
 		setName(n);
 		setAge(a);
+		count++;
+	}
+
+	~Student()
+	{
+		cout << "Destructor called" << endl;
+		delete[] name;
+		delete[] marks;
+		count--;
 	}
 
 	void setName(const char* n)
@@ -71,20 +84,31 @@ public:
 
 	char* getName()
 	{
-		return name;	
+		return name;
 	}
 	int getAge()
 	{
 		return age;
 	}
-	int* getMarks()
+	void getMarks()
 	{
-		return marks;
+		for (size_t i = 0; i < sizeMarks; i++)
+		{
+			cout << marks[i] << " ";
+		}
 	}
 
 	void displayinfo()
 	{
-		cout << name << " - " << age << endl;
+		cout << "ID: " << id << " " << name << " " << age << "\nMarks: ";
+		getMarks();
 		cout << endl;
 	}
+
+	static int getCount()
+	{
+		return count;
+	}
 };
+
+int Student::count = 0;

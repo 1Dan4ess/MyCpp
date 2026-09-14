@@ -3,6 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="C++OOP/C++OOP.vcxproj" Id="5cfa7ac8-576d-4e08-a456-d4867ce6c409" />
   <Project Path="dz10-11/dz10-11.vcxproj" Id="da66036d-3a96-4794-841e-f01a302f193f" />
   <Project Path="dz11-12/dz11-12.vcxproj" Id="4f516263-9c14-42aa-818d-369c8b6d5d25" />
   <Project Path="dz12-13/dz12-13.vcxproj" Id="00204013-e50a-48a4-ad26-325e6f56e1f8" />

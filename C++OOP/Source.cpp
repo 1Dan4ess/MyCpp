@@ -7,27 +7,43 @@
 #include <cstring>
 using namespace std;
 #include"Student.h"
+#include"Array.h"
 
 int main()
 {
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
 
-	Student s1("Vasya", 30);
-	//Student s2;
+	//cout << "Count of students: " << Student::getCount() << endl;
+	//Student s1(1, "Vasya", 30);
+	//cout << "Count of students: " << s1.getCount() << endl;
+	//Student s2(2);
+	//cout << "Count of students: " << s2.getCount() << endl;
 
-	/*s1.setName("John");
-	s1.setAge(20);*/
-	/*s1.displayinfo();
-	s2.displayinfo();*/
+	//cout << endl;
+	//s1.setMarks();
+	//s1.displayinfo();
+	//cout << endl;
+	//s2.setName("John");
+	//s2.setAge(20);
+	//s2.displayinfo();
 
-	while (true)
-	{
-		int buf;
-		cin >> buf;
-		s1.displayinfo();
-		system("pause");
-	}
+	//while (true)
+	//{
+	//	s1.setMarks();
+	//	s1.displayinfo();
+	//	s1.displayinfo();
+	//	system("pause");
+	//}
+
+	//int a = 5;
+	//const int b(5);
+	//const int c{ (int)5.5};
+
+
+
+	Array ar;
+	ar.menu();
 
 	return 0;
 }
