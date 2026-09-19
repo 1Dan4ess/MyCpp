@@ -8,11 +8,19 @@
 using namespace std;
 #include"Student.h"
 #include"Array.h"
+#include"Time.h"
+#include"String.h"
+
+void printArray(const Array& a)
+{
+	a.printArray();
+}
 
 int main()
 {
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
+
 
 	//cout << "Count of students: " << Student::getCount() << endl;
 	//Student s1(1, "Vasya", 30);
@@ -42,8 +50,20 @@ int main()
 
 
 
-	Array ar;
-	ar.menu();
+	//const Array ar;
+	//printArray(ar);
+	//ar.printArray();
+	//rray ar;
+	//ar.menu();
+
+
+	//Time t(1);
+
+	char* buff = new char[100];
+	cin.getline(buff, 100);
+	String string(buff);
+	string.write();
+	string.show();
 
 	return 0;
 }

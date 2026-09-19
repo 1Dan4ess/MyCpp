@@ -13,7 +13,6 @@ class Student
 public:
 
 	static int count;
-
 	Student(int id) : id(id)
 	{
 		cout << "Default constructor called" << endl;

@@ -5,7 +5,7 @@ using namespace std;
 class Array
 {
 	int* arr = nullptr;
-	int size = 1;
+	int size = 10;
 
 public:
 
@@ -16,7 +16,7 @@ public:
 
 	void menu()
 	{
-		arr = new int[size] {};
+		arr = new int[size];
 		while (true)
 		{
 			cout << "1 - Print\n2 - AddValue\n3 - RandomSet\n4 - Remove\n5 - Insert\n6 - Sort\n7 - Reverse\n8 - Clear\n9 - Resize\n10 - Fill\n11 - PrintInd" << endl;
@@ -95,8 +95,8 @@ public:
 		}
 	}
 
-	void setRandom();
-	void printArray();
+	void setRandom() const;
+	void printArray() const;
 	template<class T>
 	void addValueArray(T*& arr, int& size, T value);
 	void remove(int rind);
@@ -208,7 +208,7 @@ void Array::fill(int fillval)
 	}
 }
 
-void Array::printArray()
+void Array::printArray() const
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -230,12 +230,10 @@ void Array::addValueArray(T*& arr, int& size, T value)
 	arr = temp;
 }
 
-void Array::setRandom()
+void Array::setRandom() const
 {
 	int min = 0;
 	int max = 100;
-	delete[] arr;
-	arr = new int[size];
 	for (int i = 0; i < size; i++)
 	{
 		arr[i] = min + rand() % (max - min + 1);
