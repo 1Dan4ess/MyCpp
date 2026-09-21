@@ -1,58 +1,115 @@
 #pragma once
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
 class String
 {
 	int size;
-	char* string;
 	char* str;
-	
 
 public:
 	static int count;
+
 	static int getcount()
 	{
 		return count;
 	}
 
-	//String(const char* str)
-	//{
+	String() : String(80) {}
 
-	//	size = strlen(str);
-	//	this->str = new char[size + 1];
-	//	strcpy(this->str, str);
-	//}
-	String resize()
+	explicit String(int s)
 	{
-		size = 50;
-		str = new char[size];
+		size = s < 0 ? 0 : s;
+		str = new char[size + 1];
+		str[0] = '\0';
+		count++;
+	}
+
+	String(const char* buff)
+	{
+		if (buff != nullptr)
+		{
+			size = strlen(buff);
+			str = new char[size + 1];
+			strcpy(str, buff);
+		}
+		else
+		{
+			size = 0;
+			str = new char[1];
+			str[0] = '\0';
+		}
+		count++;
+	}
+
+	String(const String& st)
+	{
+		size = st.size;
+		if (st.str != nullptr)
+		{
+			str = new char[size + 1];
+			strcpy(str, st.str);
+		}
+		else
+		{
+			str = new char[1];
+			str[0] = '\0';
+		}
+		count++;
+	}
+
+	~String()
+	{
+		delete[] str;
+		count--;
+	}
+
+	String& operator=(const String& st)
+	{
+		if (this == &st)
+		{
+			return *this;
+		}
+
+		delete[] str;
+
+		size = st.size;
+		if (st.str != nullptr)
+		{
+			str = new char[size + 1];
+			strcpy(str, st.str);
+		}
+		else
+		{
+			str = new char[1];
+			str[0] = '\0';
+		}
+
 		return *this;
 	}
 
-	String() : String(80) {}
-	String(int s)
+	void resize(int newSize)
 	{
-		size = s;
-		string = new char[s+1];
-		string[0] = '\0';
-		count += 1;
-	}
-	String(char* buff)
-	{
-		size = strlen(buff);
-		string = new char[size+1];
-		strcpy(string, buff);
-		cout << string << endl;
-		count += 1;
-	}
-	~String()
-	{
-		delete[] string;
-		count -= 1;
-	}
+		if (newSize < 0) return;
 
+		char* temp = new char[newSize + 1];
+		temp[0] = '\0';
 
+		if (str != nullptr)
+		{
+			strncpy(temp, str, newSize);
+			temp[newSize] = '\0';
+			delete[] str;
+		}
+
+		str = temp;
+		size = newSize;
+	}
 
 	void write();
-	void show();
+	void show() const;
 };
 
 void String::write()
@@ -60,17 +117,24 @@ void String::write()
 	char buff[1000];
 	cout << "Write string: ";
 	cin.getline(buff, 1000);
-	if (strlen(buff) > size)
+
+	int len = strlen(buff);
+	if (len > size)
 	{
-		delete[] string;
-		string = new char[strlen(buff) + 1];
-		size = strlen(buff);
+		delete[] str;
+		str = new char[len + 1];
+		size = len;
 	}
-	strcpy(string, buff);
+
+	strcpy(str, buff);
 }
-void String::show()
+
+void String::show() const
 {
-	cout << string << endl;
+	if (str != nullptr)
+	{
+		cout << str << endl;
+	}
 }
 
 int String::count = 0;

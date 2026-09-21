@@ -12,6 +12,29 @@ class Student
 	const int id;
 public:
 
+	Student& operator=(const Student& obj)
+	{
+		if (this == &obj)
+		{
+			return *this;
+		}
+		delete[] marks;
+		delete[] name;
+
+		age = obj.age;
+		sizeMarks = obj.sizeMarks;
+
+		name = new char[strlen(obj.name)+1];
+		strcpy(name, obj.name);
+
+		marks = new int[sizeMarks];
+		for (size_t i = 0; i < sizeMarks; i++)
+		{
+			marks[i] = obj.marks[i];
+		}
+		return *this;
+	}
+
 	static int count;
 	Student(int id) : id(id)
 	{
@@ -20,6 +43,21 @@ public:
 		setAge(0);
 		count++;
 	}
+
+	Student(const Student& obj) : id(obj.id)
+	{
+		cout << "Copy constructor" << endl;
+		sizeMarks = obj.sizeMarks;
+		age = obj.age;
+		name = new char[strlen(obj.name)+1];
+		strcpy(name, obj.name);
+		marks = new int[sizeMarks];
+		for (size_t i = 0; i < sizeMarks; i++)
+		{
+			marks[i] = obj.marks[i];
+		}
+	}
+
 	Student(int id, const char* n, int a) : id(id)
 	{
 		cout << "Parameterized constructor called" << endl;

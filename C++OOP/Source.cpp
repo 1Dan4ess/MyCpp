@@ -10,6 +10,8 @@ using namespace std;
 #include"Array.h"
 #include"Time.h"
 #include"String.h"
+#include"Worker.h"
+
 
 void printArray(const Array& a)
 {
@@ -20,6 +22,31 @@ int main()
 {
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
+
+
+	Worker work1("Стас", "Прибиральник", 2025, 7120);
+	Worker work2("Максим", "Програміст", 2018, 31000);
+	Worker work3("Дмитро", "Дизайнер", 2023, 25400);
+	Worker workers[3] = {work1, work2, work3};
+	Worker menu();
+	
+
+
+
+	//Array a;
+	//a.resize(10);
+	//a.setRandom();
+	//a.printArray();
+	//cout << endl;
+	//printArray(a);
+	//cout << endl;
+	//a.printArray();
+	//Array b;
+	//b.resize(10);
+
+	//Student s1(1, "Vasya", 30);
+	//s1.displayinfo();
+
 
 
 	//cout << "Count of students: " << Student::getCount() << endl;
@@ -59,11 +86,11 @@ int main()
 
 	//Time t(1);
 
-	char* buff = new char[100];
-	cin.getline(buff, 100);
-	String string(buff);
-	string.write();
-	string.show();
+	//char* buff = new char[100];
+	//cin.getline(buff, 100);
+	//String string(buff);
+	//string.write();
+	//string.show();
 
 	return 0;
 }

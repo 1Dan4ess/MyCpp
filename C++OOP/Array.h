@@ -9,6 +9,24 @@ class Array
 
 public:
 
+	Array& operator=(const Array& obj)
+	{
+		if (this == &obj)
+		{
+			return *this;
+		}
+
+		delete[] arr;
+
+		size = obj.size;
+		arr = new int[size];
+		for (size_t i = 0; i < size; i++)
+		{
+			arr[i] = obj.arr[i];
+		}
+		return *this;
+	}
+
 	~Array()
 	{
 		delete[] arr;
@@ -124,21 +142,28 @@ void Array::reverse()
 
 void Array::resize(int newsize)
 {
-	int* temp = new int[newsize] {};
-	int count = size;
+	if (newsize < 0) return;
 
-	for (int i = 0; i < newsize; i++)
+	if (newsize == 0)
 	{
-		if (i >= size)
-		{
-			temp[i] = 0;
-		}
-		else
+		delete[] arr;
+		arr = nullptr;
+		size = 0;
+		return;
+	}
+
+	int* temp = new int[newsize] {};
+
+	if (arr != nullptr)
+	{
+		int minSize = (size < newsize) ? size : newsize;
+		for (int i = 0; i < minSize; i++)
 		{
 			temp[i] = arr[i];
 		}
+		delete[] arr;
 	}
-	delete[] arr;
+
 	arr = temp;
 	size = newsize;
 }
