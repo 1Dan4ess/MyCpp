@@ -44,12 +44,12 @@ Worker* Worker::dateCheck(int obj)
 	int date;
 	cin >> date;
 
-	cout << "Copy constructor" << endl;
-	name = new char[strlen(obj.name) + 1];
-	strcpy(name, obj.name);
-	marks = new int[sizeMarks];
-	for (size_t i = 0; i < sizeMarks; i++)
-	{
-		marks[i] = obj.marks[i];
-	}
+	//cout << "Copy constructor" << endl;
+	//name = new char[strlen(obj.name) + 1];
+	//strcpy(name, obj.name);
+	//marks = new int[sizeMarks];
+	//for (size_t i = 0; i < sizeMarks; i++)
+	//{
+	//	marks[i] = obj.marks[i];
+	//}
 }
