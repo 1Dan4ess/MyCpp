@@ -53,18 +53,11 @@ public:
 		cout << "----------------------------" << endl;
 	}
 
-	void menu()
+	void showAll()
 	{
-		cout << "1 - dateCheck\n2 - salaryCheck\n3 - ratingCheck" << endl;
-		int choice;
-		cout << "Дія: ";
-		cin >> choice;
-
-		switch (choice)
+		for (size_t i = 0; i < size; i++)
 		{
-		case(1): Worker* datecheck(); break;
-		case(2): Worker* salarycheck(); break;
-		case(3): Worker* ratingcheck(); break;
+			workers[i].show();
 		}
 	}
 
@@ -85,3 +78,90 @@ public:
 	Worker* salaryCheck(double salary);
 	Worker* ratingCheck(String rating);
 };
+
+
+
+Worker* Worker::dateCheck(int date)
+{
+	int size2 = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (workers[i].date > date)
+		{
+			size2 += 1;
+		}
+	}
+	Worker* workers2 = new Worker[size];
+	int ind = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (workers[i].date > date)
+		{
+			workers2[ind] = workers[i];
+			ind += 1;
+		}
+	}
+	for (size_t i = 0; i < size2; i++)
+	{
+		workers2[i].show();
+	}
+	return workers2;
+}
+
+
+
+Worker* Worker::salaryCheck(double salary)
+{
+	int size2 = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (workers[i].salary > salary)
+		{
+			size2 += 1;
+		}
+	}
+	Worker* workers2 = new Worker[size];
+	int ind = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (workers[i].salary > salary)
+		{
+			workers2[ind] = workers[i];
+			ind += 1;
+		}
+	}
+	for (size_t i = 0; i < size2; i++)
+	{
+		workers2[i].show();
+	}
+	return workers2;
+}
+
+
+
+Worker* Worker::ratingCheck(String rating)
+{
+	int size2 = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (workers[i].rating == rating)
+		{
+			size2 += 1;
+		}
+	}
+	Worker* workers2 = new Worker[size];
+	int ind = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (workers[i].rating == rating)
+		{
+			workers2[ind] = workers[i];
+			ind += 1;
+		}
+	}
+	for (size_t i = 0; i < size2; i++)
+	{
+		workers2[i].show();
+	}
+	return workers2;
+}

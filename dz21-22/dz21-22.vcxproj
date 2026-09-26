@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5cfa7ac8-576d-4e08-a456-d4867ce6c409}</ProjectGuid>
-    <RootNamespace>COOP</RootNamespace>
+    <ProjectGuid>{3cd5e88d-68f4-48c9-9514-4002c43b47bb}</ProjectGuid>
+    <RootNamespace>dz2122</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,15 +139,11 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="dz21-22.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Array.h" />
-    <ClInclude Include="Fraction.h" />
+    <ClInclude Include="Reservoir.h" />
     <ClInclude Include="String.h" />
-    <ClInclude Include="Time.h" />
-    <ClInclude Include="Student.h" />
-    <ClInclude Include="Worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

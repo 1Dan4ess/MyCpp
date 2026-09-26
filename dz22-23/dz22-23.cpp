@@ -19,5 +19,20 @@ int main()
     work.addWork(Worker("Стас", "Прибиральник", 2025, 7120));
     work.addWork(Worker("Максим", "Програміст", 2018, 31000));
     work.addWork(Worker("Дмитро", "Дизайнер", 2023, 25400));
-    Worker menu();
+    work.showAll();
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << "DateCheck:" << endl;
+    work.dateCheck(2020);
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << "SalaryCheck:" << endl;
+    work.salaryCheck(10000);
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << "RatingCheck:" << endl;
+    work.ratingCheck("Програміст");
 }

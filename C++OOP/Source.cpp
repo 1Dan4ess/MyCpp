@@ -11,6 +11,7 @@ using namespace std;
 #include"Time.h"
 #include"String.h"
 #include"Worker.h"
+#include"Fraction.h"
 
 
 void printArray(const Array& a)
@@ -24,11 +25,17 @@ int main()
 	SetConsoleOutputCP(65001);
 
 
-	Worker work1("Стас", "Прибиральник", 2025, 7120);
-	Worker work2("Максим", "Програміст", 2018, 31000);
-	Worker work3("Дмитро", "Дизайнер", 2023, 25400);
-	Worker workers[3] = {work1, work2, work3};
-	Worker menu();
+
+
+
+
+
+
+	//Worker work1("Стас", "Прибиральник", 2025, 7120);
+	//Worker work2("Максим", "Програміст", 2018, 31000);
+	//Worker work3("Дмитро", "Дизайнер", 2023, 25400);
+	//Worker workers[3] = {work1, work2, work3};
+	//Worker menu();
 	
 
 

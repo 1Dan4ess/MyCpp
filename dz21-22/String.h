@@ -57,7 +57,6 @@ public:
 			str = new char[1];
 			str[0] = '\0';
 		}
-		count++;
 	}
 
 	~String()
@@ -109,16 +108,16 @@ public:
 	}
 
 	void write();
-	void print();
-
-
-
-	bool operator==(const String& str) const
-	{
-		return strcmp(this->str, str.str) == 0;
-	}
-
+	void show() const;
+	friend ostream& operator<<(ostream& out, const String& f);
+	friend istream& operator>>(istream& in, String& f);
 };
+
+ostream& operator<<(ostream& out, const String& f)
+{
+	out << f.str;
+	return out;
+}
 
 void String::write()
 {
@@ -137,7 +136,7 @@ void String::write()
 	strcpy(str, buff);
 }
 
-void String::print()
+void String::show() const
 {
 	if (str != nullptr)
 	{
