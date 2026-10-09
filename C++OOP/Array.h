@@ -1,15 +1,35 @@
 #pragma once
 #include<iostream>
+#include "Fraction.h"
+#define assert
 using namespace std;
+
+template<class T>
 
 class Array
 {
-	int* arr = nullptr;
+	T* arr = nullptr;
 	int size = 10;
 
 public:
 
-	Array& operator=(const Array& obj)
+	Array(const Array& obj)
+	{
+    size = obj.size;
+    arr = new T[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = obj.arr[i];
+    }
+	}
+
+	Array()
+	{
+		arr = new T[size]{};
+	}
+
+	Array<T>& operator=(const Array& obj)
 	{
 		if (this == &obj)
 		{
@@ -19,7 +39,7 @@ public:
 		delete[] arr;
 
 		size = obj.size;
-		arr = new int[size];
+		arr = new T[size];
 		for (size_t i = 0; i < size; i++)
 		{
 			arr[i] = obj.arr[i];
@@ -34,7 +54,6 @@ public:
 
 	void menu()
 	{
-		arr = new int[size];
 		while (true)
 		{
 			cout << "1 - Print\n2 - AddValue\n3 - RandomSet\n4 - Remove\n5 - Insert\n6 - Sort\n7 - Reverse\n8 - Clear\n9 - Resize\n10 - Fill\n11 - PrintInd" << endl;
@@ -51,11 +70,11 @@ public:
 				int val;
 				cout << "Value: ";
 				cin >> val;
-				addValueArray(arr, size, val);
+				add(val);
 				cout << endl;
 				break;
 			case(3): 
-				setRandom(); 
+				setRandom(0, 100); 
 				cout << endl;
 				break;
 			case(4):
@@ -115,24 +134,25 @@ public:
 
 	void setRandom() const;
 	void printArray() const;
-	template<class T>
-	void addValueArray(T*& arr, int& size, T value);
+	void add(const T& value);
 	void remove(int rind);
-	void insert(int insind, int insval);
+	void insert(int insind, const T& insval);
 	void sort();
 	void reverse();
 	void clear();
 	void resize(int newsize);
-	void fill(int fillval);
+	void fill(const T& fillval);
 	void printArrayInd(int pind);
 };
 
-void Array::printArrayInd(int pind)
+template<class T>
+void Array<T>::printArrayInd(int pind)
 {
 	cout << arr[pind] << endl;
 }
 
-void Array::reverse()
+template<class T>
+void Array<T>::reverse()
 {
 	for (size_t i = 0; i < size/2; i++)
 	{
@@ -140,7 +160,8 @@ void Array::reverse()
 	}
 }
 
-void Array::resize(int newsize)
+template<class T>
+void Array<T>::resize(int newsize)
 {
 	if (newsize < 0) return;
 
@@ -152,7 +173,7 @@ void Array::resize(int newsize)
 		return;
 	}
 
-	int* temp = new int[newsize] {};
+	T* temp = new T[newsize] {};
 
 	if (arr != nullptr)
 	{
@@ -168,7 +189,8 @@ void Array::resize(int newsize)
 	size = newsize;
 }
 
-void Array::sort()
+template<class T>
+void Array<T>::sort()
 {
 	for (int i = 0; i < size - 1; i++)
 	{
@@ -182,26 +204,35 @@ void Array::sort()
 	}
 }
 
-void Array::remove(int rind)
+template<class T>
+void Array<T>::remove(int rind)
 {
-	int* arr2 = new int[size - 1];
+	if (rind < 0 || rind >= size)
+		return;
+
+	T* arr2 = new T[size - 1];
+
 	int ind2 = 0;
+
 	for (int i = 0; i < size; i++)
 	{
 		if (i != rind)
 		{
 			arr2[ind2] = arr[i];
-			ind2 += 1;
+			ind2++;
 		}
 	}
+
 	delete[] arr;
+
 	arr = arr2;
-	size -= 1;
+	size--;
 }
 
-void Array::insert(int insind, int insval)
+template<class T>
+void Array<T>::insert(int insind, const T& insval)
 {
-	int* arr2 = new int[size + 1];
+	T* arr2 = new T[size + 1];
 	int ind2 = 0;
 	for (size_t i = 0; i < size; i++)
 	{
@@ -218,14 +249,16 @@ void Array::insert(int insind, int insval)
 	size += 1;
 }
 
-void Array::clear()
+template<class T>
+void Array<T>::clear()
 {
 	delete[] arr;
 	arr = nullptr;
 	size = 0;
 }
 
-void Array::fill(int fillval)
+template<class T>
+void Array<T>::fill(const T& fillval)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -233,7 +266,8 @@ void Array::fill(int fillval)
 	}
 }
 
-void Array::printArray() const
+template<class T>
+void Array<T>::printArray() const
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -242,7 +276,7 @@ void Array::printArray() const
 }
 
 template<class T>
-void Array::addValueArray(T*& arr, int& size, T value)
+void Array<T>::add(const T& value)
 {
 	T* temp = new T[size + 1];
 	for (size_t i = 0; i < size; i++)
@@ -255,9 +289,17 @@ void Array::addValueArray(T*& arr, int& size, T value)
 	arr = temp;
 }
 
-void Array::setRandom() const
+template<class T>
+void Array<T>::setRandom() const
 {
-	int min = 0;
+	cout << "No implamantation for " << typeid(T).name() << endl;
+}
+
+template <>
+void Array<int>::setRandom() const
+{
+	cout << "Int realization" << endl;
+	int min = -100;
 	int max = 100;
 	for (int i = 0; i < size; i++)
 	{

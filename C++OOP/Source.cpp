@@ -10,11 +10,16 @@ using namespace std;
 #include"Array.h"
 #include"Time.h"
 #include"String.h"
-#include"Worker.h"
 #include"Fraction.h"
+#include"Var.h"
+#include"Stack.h"
+#include"Calc.h"
+#include"Queue.h"
+#include"PriorityQueue.h"
 
 
-void printArray(const Array& a)
+template<class T>
+void printArray(Array<T> a)
 {
 	a.printArray();
 }
@@ -25,18 +30,61 @@ int main()
 	SetConsoleOutputCP(65001);
 
 
+	PriorityQueue<int, int> pq;
+	pq.enqueue(10, 1);
+	pq.enqueue(20, 3);
+	pq.enqueue(30, 2);
+	pq.enqueue(40, 1);
+	pq.enqueue(60, 3);
+	pq.print();
 
+	//Queue<int> q = { 1, 2, 3, 4 };
+	//q.print();
+	//q.ring();
+	//q.print();
 
-
-
-
-
-	//Worker work1("Стас", "Прибиральник", 2025, 7120);
-	//Worker work2("Максим", "Програміст", 2018, 31000);
-	//Worker work3("Дмитро", "Дизайнер", 2023, 25400);
-	//Worker workers[3] = {work1, work2, work3};
-	//Worker menu();
 	
+
+
+
+
+
+	//Calc c("4+3^2+4/2");
+	//cout << c.getResult() << endl;
+
+	//Stack<int, 5> s;
+	//s.push(10);
+	//s.push(15);
+	//s.push(5);
+	//s.push(20);
+	//s.push(25);
+	//s.print();
+
+
+
+
+
+
+
+	//Array<Fraction> a;
+	//a.resize(10);
+	//a.setRandom();
+	//printArray(a);
+
+
+
+
+
+
+
+	//Fraction f1(3, 5);
+	//Fraction f2(4, 5);
+	//Fraction f3 = f1 + f2;
+	//cout << f3 << endl;
+
+
+
+
 
 
 
