@@ -16,6 +16,7 @@ using namespace std;
 #include"Calc.h"
 #include"Queue.h"
 #include"PriorityQueue.h"
+#include"ForwardList.h"
 
 
 template<class T>
@@ -30,13 +31,122 @@ int main()
 	SetConsoleOutputCP(65001);
 
 
-	PriorityQueue<int, int> pq;
-	pq.enqueue(10, 1);
-	pq.enqueue(20, 3);
-	pq.enqueue(30, 2);
-	pq.enqueue(40, 1);
-	pq.enqueue(60, 3);
-	pq.print();
+	// Конструктор initializer_list
+	ForwardList<int> l1 = { 1, 2, 3 };
+	cout << "Initial list: ";
+	l1.print();
+
+	// push_front
+	l1.push_front(0);
+	cout << "push_front(0): ";
+	l1.print();
+
+	// push_back
+	l1.push_back(4);
+	cout << "push_back(4): ";
+	l1.print();
+
+	// insert
+	l1.insert(10, 2);
+	cout << "insert(10, 2): ";
+	l1.print();
+
+	// pop_front
+	l1.pop_front();
+	cout << "pop_front(): ";
+	l1.print();
+
+	// pop_back
+	l1.pop_back();
+	cout << "pop_back(): ";
+	l1.print();
+
+	// remove
+	l1.remove(1);
+	cout << "remove(1): ";
+	l1.print();
+
+	// front, back, at, []
+	cout << "front(): " << l1.front() << endl;
+	cout << "back(): " << l1.back() << endl;
+	cout << "at(1): " << l1.at(1) << endl;
+	cout << "operator[0]: " << l1[0] << endl;
+
+	// getSize
+	cout << "getSize(): " << l1.getSize() << endl;
+
+	// Конструктор копіювання
+	ForwardList<int> l2 = l1;
+	cout << "Copy constructor: ";
+	l2.print();
+
+	// Оператор присвоєння
+	ForwardList<int> l3;
+	l3 = l1;
+	cout << "operator=: ";
+	l3.print();
+
+	// Оператор +
+	ForwardList<int> l4 = l1 + l2;
+	cout << "operator+: ";
+	l4.print();
+
+	// Оператор +=
+	l1 += l2;
+	cout << "operator+=: ";
+	l1.print();
+
+	// firstIndex, lastIndex, count
+	ForwardList<int> l5 = { 1, 2, 3, 2, 4, 2 };
+
+	cout << "Search list: ";
+	l5.print();
+
+	cout << "firstIndex(2): " << l5.firstIndex(2) << endl;
+	cout << "lastIndex(2): " << l5.lastIndex(2) << endl;
+	cout << "count(2): " << l5.count(2) << endl;
+
+	// count_if
+	cout << "count_if(even): "
+		<< l5.count_if(ForwardList<int>::predicate) << endl;
+
+	// clear
+	l5.clear();
+	cout << "After clear(): ";
+	l5.print();
+	cout << "Size after clear: " << l5.getSize() << endl;
+
+	// Робота з порожнім списком
+	ForwardList<int> empty;
+	empty.push_back(5);
+	cout << "Empty + push_back(5): ";
+	empty.print();
+
+	empty.pop_back();
+	cout << "After pop_back(): ";
+	empty.print();
+
+	// Самододавання
+	ForwardList<int> l6 = { 1, 2, 3 };
+	l6 += l6;
+	cout << "Self +=: ";
+	l6.print();
+
+
+
+
+
+
+
+
+
+	//PriorityQueue<int, int> pq;
+	//pq.enqueue(10, 1);
+	//pq.enqueue(20, 3);
+	//pq.enqueue(30, 2);
+	//pq.enqueue(40, 1);
+	//pq.enqueue(60, 3);
+	//pq.print();
 
 	//Queue<int> q = { 1, 2, 3, 4 };
 	//q.print();

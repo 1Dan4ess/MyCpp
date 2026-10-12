@@ -6,7 +6,7 @@ class Node
 public:
 	T value;
 	Node* next;
-	TPri priority;
+	TPri priority = 0;
 	Node(const T& val) : value(val), next(nullptr) {};
 	Node(const T& val, TPri pri) : value(val), priority(pri), next(nullptr) {};
 };

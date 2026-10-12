@@ -8,10 +8,13 @@
 using namespace std;
 #include"String.h"
 #include"Var.h"
+#include"Array.h"
 
 
 int main()
 {
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
+
+
 }

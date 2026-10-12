@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dz24-25.cpp" />
+    <ClInclude Include="Array.h" />
     <ClInclude Include="String.h" />
   </ItemGroup>
   <ItemGroup>
