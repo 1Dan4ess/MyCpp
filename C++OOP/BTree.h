@@ -62,7 +62,11 @@ struct BTreeNode
 template<class TKey, class TVal>
 class BTree
 {
+	bool isPush;
+
 	BTreeNode<TKey, TVal>* root = nullptr;
+
+	BTreeNode<TKey, TVal>* push_r(const TKey& key, const TVal& val, BTreeNode<TKey, TVal>*& node);
 
 public:
 	~BTree();
@@ -71,8 +75,33 @@ public:
 	void print();
 
 	bool push(const TKey& key, const TVal& val);
+	bool push_r(const TKey& key, const TVal& val);
 	TVal* getValue(const TKey& key);
 };
+
+template<class TKey, class TVal>
+BTreeNode<TKey, TVal>* BTree<TKey, TVal>::push_r(const TKey& key, const TVal& val, BTreeNode<TKey, TVal>*& node)
+{
+	if (!node)
+	{
+		node = new BTreeNode<TKey, TVal>(key, val);
+		isPush = true;
+		return node;
+	}
+	if (key == node->key)
+	{
+		isPush = false;
+	}
+	else if (key < node->key)
+	{
+		nide->left = push_r(key, val, node->left);
+	}
+	else if (key > node->key)
+	{
+		node->right = push_r(key, val, node->right);
+	}
+	return node;
+}
 
 template<class TKey, class TVal>
 BTree<TKey, TVal>::~BTree()
@@ -143,6 +172,13 @@ bool BTree<TKey, TVal>::push(const TKey& key, const TVal& val)
 		}
 	} while (true)
 
+}
+
+template<class TKey, class TVal>
+bool BTree<TKey, TVal>::push_r(const TKey& key, const TVal& val)
+{
+	push_r(key, val, root);
+	return isPush;
 }
 
 template<class TKey, class TVal>
