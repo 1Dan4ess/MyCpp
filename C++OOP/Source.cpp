@@ -18,6 +18,7 @@ using namespace std;
 #include"PriorityQueue.h"
 #include"ForwardList.h"
 #include"List .h"
+#include"BTree.h"
 
 
 template<class T>
@@ -32,14 +33,28 @@ int main()
 	SetConsoleOutputCP(65001);
 
 
-	List<int> l = { 1, 2, 3, 4, 5 };
+	BTree<int, int> b;
+	b.push(10, 10);
+	b.push(5, 5);
+	b.push(2, 2);
+	b.push(7, 7);
+	b.push(11, 11);
+	b.print();
+
+
+
+
+
+
+
+	/*List<int> l = { 1, 2, 3, 4, 5 };
 	l.push_front(4);
 	l.push_back(13);
 	l.insert(14, 2);
 	l.pop_back();
 	l.pop_front();
 	l.remove(3);
-	l.print();
+	l.print();*/
 
 
 
