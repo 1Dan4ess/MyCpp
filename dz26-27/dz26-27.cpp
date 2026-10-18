@@ -6,6 +6,8 @@
 #include<fstream>
 #include <cstring>
 using namespace std;
+#include"Stop.h"
+#include <ctime>
 
 
 int main()
@@ -14,5 +16,7 @@ int main()
 	SetConsoleOutputCP(65001);
 
 
-	
+	srand(time(nullptr));
+	Stop stop;
+	stop.start();
 }
