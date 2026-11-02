@@ -134,7 +134,14 @@ void List<T>::push_front(const T& value)
 	}
 	else
 	{
-		Node<T>* newNode = new Node<T>(value);
+		//Node<T>* newNode = nullptr;
+		//try {
+			Node<T>* newNode = new Node<T>(value);
+		//}
+		//catch (bad_alloc& ex)
+		//{
+		//	throw;
+		//}
 		newNode->next = first;
 		first->prev = newNode;
 		first = newNode;

@@ -22,6 +22,7 @@ using namespace std;
 #include"WarOfWorld.h"
 #include <ctime>
 #include"Animal.h"
+#include"SmartPointer.h"
 
 
 template<class T>
@@ -30,18 +31,52 @@ void printArray(Array<T> a)
 	a.printArray();
 }
 
+void PrintAnimal(IPrinable* a)
+{
+	a->print();
+}
+
+void superFunc()
+{
+	SmartPointer<Cat> c(new Cat("Tom", 4));
+	SmartPointer<Cat>c1 = move(c);
+
+}
+
 int main()
 {
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
-
-
 	srand(time(nullptr));
 
 
-	PriorityQueue<int, int> p;
-	p.enqueue(10, 10);
-	p.print();
+	shared_ptr<Cat> k1 = make_shared<Cat>("Tom", 3);
+
+	unique_ptr<Cat> c = make_unique<Cat>("Tom", 3);
+	c->print();
+	unique_ptr<Cat> c1 = move(c);
+	c1->print();
+	cout << c << endl;
+	cout << c1 << endl;
+
+	//int a = 10;
+	//int&& b = 10;
+	//superFunc();
+	//List<Cat> l;
+	//Cat c = Cat("Tom", 4);
+	//l.push_back(c);
+	//l.push_back(Cat("Barsik", 2));
+	 
+	//IPrinable* a = new SiamCat("Barsik", 3);
+	//PrintAnimal(a);
+
+
+
+
+
+	//PriorityQueue<int, int> p;
+	//p.enqueue(10, 10);
+	//p.print();
 
 	//Animal* cat = new Cat("Tom", 3);
 	//Cat* c = dynamic_cast<Cat*>(cat);
