@@ -1,8 +1,17 @@
 #pragma once
 #include<initializer_list>
 #include "Node.h"
+#include<Windows.h>
 using namespace std;
 
+
+void SetCursor(int x, int y)
+{
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
 
 template<class T>
 class List
@@ -36,6 +45,7 @@ public:
 
 	void clear();
 	void print() const;
+	void print(int x, int y) const;
 	size_t getSize() const;
 
 	size_t firstIndex(const T& value);
@@ -188,6 +198,10 @@ void List<T>::pop_front()
 		{
 			first->prev = nullptr;
 		}
+		else
+		{
+			last = nullptr;
+		}
 	}
 }
 
@@ -218,7 +232,7 @@ void List<T>::remove(size_t index)
 	{
 		pop_front();
 	}
-	else if (index = size-1)
+	else if (index == size-1)
 	{
 		pop_back();
 	}
@@ -309,7 +323,20 @@ void List<T>::print() const
 	Node<T>* temp = first;
 	while (temp)
 	{
-		cout << temp->value << endl;
+		cout << temp->value;
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+template<class T>
+void List<T>::print(int x, int y) const
+{
+	Node<T>* temp = first;
+	while (temp)
+	{
+		SetCursor(x, y++);
+		cout << temp->value;
 		temp = temp->next;
 	}
 	cout << endl;

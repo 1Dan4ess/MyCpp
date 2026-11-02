@@ -142,13 +142,16 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
     <ClInclude Include="Array.h" />
     <ClInclude Include="BasePolice.h" />
     <ClInclude Include="BTree.h" />
     <ClInclude Include="Calc.h" />
+    <ClInclude Include="Composition.h" />
     <ClInclude Include="ForwardList.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="List .h" />
+    <ClInclude Include="MyException.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Queue.h" />
@@ -157,6 +160,7 @@
     <ClInclude Include="Time.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Var.h" />
+    <ClInclude Include="WarOfWorld.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

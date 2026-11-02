@@ -94,7 +94,7 @@ BTreeNode<TKey, TVal>* BTree<TKey, TVal>::push_r(const TKey& key, const TVal& va
 	}
 	else if (key < node->key)
 	{
-		nide->left = push_r(key, val, node->left);
+		node->left = push_r(key, val, node->left);
 	}
 	else if (key > node->key)
 	{
@@ -170,8 +170,7 @@ bool BTree<TKey, TVal>::push(const TKey& key, const TVal& val)
 		{
 			return false;
 		}
-	} while (true)
-
+	} while (true);
 }
 
 template<class TKey, class TVal>

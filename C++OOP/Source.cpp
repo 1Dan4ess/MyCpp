@@ -19,6 +19,9 @@ using namespace std;
 #include"ForwardList.h"
 #include"List .h"
 #include"BTree.h"
+#include"WarOfWorld.h"
+#include <ctime>
+#include"Animal.h"
 
 
 template<class T>
@@ -33,13 +36,45 @@ int main()
 	SetConsoleOutputCP(65001);
 
 
-	BTree<int, int> b;
-	b.push(10, 10);
-	b.push(5, 5);
-	b.push(2, 2);
-	b.push(7, 7);
-	b.push(11, 11);
-	b.print();
+	srand(time(nullptr));
+
+
+	PriorityQueue<int, int> p;
+	p.enqueue(10, 10);
+	p.print();
+
+	//Animal* cat = new Cat("Tom", 3);
+	//Cat* c = dynamic_cast<Cat*>(cat);
+	//if (c)
+	//{
+	//	c->catchMouse();
+	//	cout << c ->getMouse() << endl;
+	//}
+	//else
+	//{
+	//	cout << "Not Cat" << endl;
+	//}
+
+
+
+
+
+	//WarOfWorld war(5);
+	//war.game();
+
+
+
+
+
+
+
+	//BTree<int, int> b;
+	//b.push(10, 10);
+	//b.push(5, 5);
+	//b.push(2, 2);
+	//b.push(7, 7);
+	//b.push(11, 11);
+	//b.print();
 
 
 
